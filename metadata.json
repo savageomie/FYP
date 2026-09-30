@@ -1,0 +1,6 @@
+{
+  "name": "Transcriptomic Brain Vulnerability Pipeline",
+  "description": "Multi-disorder GWAS risk gene transcriptomic enrichment and spatial null modeling using the Allen Human Brain Atlas (AHBA).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

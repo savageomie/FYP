@@ -1,0 +1,51 @@
+# =============================================================================
+# VulnMap: Python dependencies
+# =============================================================================
+# Install with: pip install -r requirements.txt
+# For conda users: see environment.yml
+#
+# Core versions are pinned to known-compatible releases.
+# If a version fails, try unpinning (remove ==X.Y.Z) and report the issue.
+
+# --- Core scientific stack ---
+numpy>=1.24,<2.0
+pandas>=2.0,<3.0
+scipy>=1.10,<2.0
+scikit-learn>=1.3,<2.0
+statsmodels>=0.14,<1.0
+
+# --- Neuroimaging & brain atlases ---
+abagen>=0.1.3
+nibabel>=5.0
+nilearn>=0.10
+neuromaps>=0.0.4
+
+# --- Spatial null models ---
+brainsmash>=0.11.0
+
+# --- ENIGMA Toolbox (damage maps) ---
+enigmatoolbox>=2.0.0
+
+# --- Visualization ---
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.15
+
+# --- Web app ---
+streamlit>=1.28
+
+# --- Configuration ---
+pyyaml>=6.0
+
+# --- Testing ---
+pytest>=7.4
+pytest-cov>=4.1
+
+# --- Utilities ---
+tqdm>=4.65
+requests>=2.31
+joblib>=1.3
+
+# --- Optional: for notebooks ---
+jupyter>=1.0
+ipykernel>=6.25

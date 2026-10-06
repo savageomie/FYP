@@ -1,0 +1,18 @@
+# Ignore raw donor downloads and large expression matrices
+raw/*
+!raw/README.md
+!raw/atlas/
+!raw/atlas/*.annot
+
+interim/*
+!interim/harmonized_genesets.json
+!interim/geneset_summary.parquet
+!interim/jaccard_*.parquet
+
+# Keep processed analysis results so Streamlit explorer works out-of-the-box
+!processed/
+!processed/*.parquet
+!processed/*.csv
+
+!README.md
+!.gitignore

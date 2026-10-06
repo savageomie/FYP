@@ -1,0 +1,20 @@
+{
+  "phase": "expression",
+  "timestamp": "20261004_003329",
+  "params": {
+    "parcellation": "desikan_killiany",
+    "probe_selection": "diff_stability",
+    "normalization": "scaled_robust_sigmoid",
+    "lr_mirror": "bidirectional",
+    "return_donors": true,
+    "ds_threshold": 0.1,
+    "n_regions": 83,
+    "n_genes_raw": 15633,
+    "n_genes_filtered": 13449,
+    "n_donors": 6,
+    "n_all_nan_regions": 0
+  },
+  "extra": {
+    "output_shapes": "(83, 13449)"
+  }
+}

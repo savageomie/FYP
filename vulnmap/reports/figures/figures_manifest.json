@@ -1,0 +1,75 @@
+{
+  "figures": {
+    "fig1_data_qc": {
+      "title": "Figure 1: Pipeline Overview & Data Quality Control",
+      "files": {
+        "png": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig1_data_qc.png",
+        "svg": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig1_data_qc.svg"
+      },
+      "panels": [
+        "A: Differential Stability",
+        "B: Regional Coverage",
+        "C: Gene Set Sizes",
+        "D: Jaccard Overlap"
+      ]
+    },
+    "fig2_regional_enrichment_shrinkage": {
+      "title": "Figure 2: Regional Brain Enrichment & Null Model Shrinkage",
+      "files": {
+        "png": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig2_regional_enrichment_shrinkage.png",
+        "svg": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig2_regional_enrichment_shrinkage.svg"
+      },
+      "panels": [
+        "A: Vulnerability Extremes",
+        "B: Null Model Shrinkage",
+        "C: P-value Calibration",
+        "D: Topography"
+      ]
+    },
+    "fig3_damage_alignment": {
+      "title": "Figure 3: Risk Gene Vulnerability vs Clinical MRI Neuroimaging Damage",
+      "files": {
+        "png": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig3_damage_alignment.png",
+        "svg": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig3_damage_alignment.svg"
+      },
+      "panels": [
+        "A: Damage Scatter Fit",
+        "B: Spin Permutation Null",
+        "C: Cross-Disorder Effect Sizes"
+      ]
+    },
+    "fig4_crossdisorder_and_celltypes": {
+      "title": "Figure 4: Cross-Disorder Topography & Cellular Deconvolution",
+      "files": {
+        "png": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig4_crossdisorder_and_celltypes.png",
+        "svg": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig4_crossdisorder_and_celltypes.svg"
+      },
+      "panels": [
+        "A: Correlation Heatmap",
+        "B: Hierarchical Clustering",
+        "C: PCA Biplot",
+        "D: Cell-Type R^2"
+      ]
+    },
+    "fig5_robustness_sensitivity": {
+      "title": "Figure 5: Robustness & Sensitivity Analyses",
+      "files": {
+        "png": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig5_robustness_sensitivity.png",
+        "svg": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\figures\\fig5_robustness_sensitivity.svg"
+      },
+      "panels": [
+        "A: Threshold Sensitivity",
+        "B: Score Preservation",
+        "C: Donor Cross-Validation"
+      ]
+    }
+  },
+  "tables": {
+    "table1": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\tables\\table1_expression_genesets_qc.csv",
+    "table2": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\tables\\table2_enrichment_shrinkage.csv",
+    "table3": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\tables\\table3_damage_comparison.csv",
+    "table4": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\tables\\table4_celltype_regression.csv",
+    "table5": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\tables\\table5_crossdisorder_similarity.csv",
+    "table6": "C:\\Users\\adsul\\OneDrive\\Desktop\\FYP\\vulnmap\\reports\\tables\\table6_robustness_summary.csv"
+  }
+}

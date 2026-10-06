@@ -1,0 +1,83 @@
+# =============================================================================
+# VulnMap: Global Parameters
+# =============================================================================
+# All pipeline runs read from this file. Override per-run via CLI or notebook.
+# Global seed ensures reproducibility across all stochastic operations.
+
+# --- Global ---
+seed: 42
+mode: "FAST"          # "FAST" = 1,000 perms; "FULL" = 10,000 perms
+n_perm_fast: 1000
+n_perm_full: 10000
+perm_chunk_size: 500  # Process permutations in chunks to limit memory
+use_float32: true     # Use float32 for permutation matrices to save RAM
+
+# --- Phase 1: Expression ---
+expression:
+  parcellation: "desikan_killiany"         # Primary: Desikan-Killiany (matches ENIGMA)
+  robustness_parcellation: "schaefer_200"  # Robustness check
+  probe_selection: "diff_stability"        # abagen probe selection method
+  normalization: "scaled_robust_sigmoid"   # abagen normalization
+  lr_mirror: "bidirectional"               # Mirror left/right hemisphere
+  return_donors: true                      # Return per-donor matrices
+  ds_threshold: 0.1                        # Differential stability threshold
+  low_coverage_threshold: 5               # Flag regions with fewer samples
+
+# --- Phase 2: Gene Sets ---
+genesets:
+  gwas_p_genome_wide: 5.0e-8              # Genome-wide significance
+  gwas_p_suggestive: 1.0e-5               # Suggestive significance
+  min_genes: 10                            # Minimum genes after harmonization
+  gwas_source: "rest_api"                  # "rest_api" or "tsv_file"
+  gwas_cache_dir: "data/raw/gwas"
+  magma_dir: "data/raw/magma"             # Optional MAGMA gene-level results
+
+# --- Phase 3: Enrichment ---
+enrichment:
+  score_method: "mean_zscore"             # Region score = mean z-scored expression
+  null_models:
+    - "naive"
+    - "matched"
+    - "spatial_coexpr"
+    - "spatial_surrogate"
+  fdr_method: "fdr_bh"                    # Benjamini-Hochberg
+  fdr_alpha: 0.05
+  matched_null:
+    n_bins_length: 5                       # Quantile bins for gene length
+    n_bins_gc: 5                           # Quantile bins for GC content
+    n_bins_expr: 5                         # Quantile bins for mean expression
+  spatial_null:
+    moran_tolerance: 0.1                   # Tolerance for Moran's I matching
+    coexpr_tolerance: 0.1                  # Tolerance for co-expression matching
+    brainsmash_kwargs:                     # brainsmash.mapgen.Base parameters
+      ns: 500
+      knn: 1000
+
+# --- Phase 4: Damage Maps ---
+damage:
+  spin_n_perm: 10000
+  spin_test_type: "vasa"                  # Spin test implementation
+  custom_atrophy_dir: "data/raw/atrophy"  # User-supplied atrophy CSVs
+
+# --- Phase 5: Cell Types / Cross-Disorder ---
+celltypes:
+  marker_file: "data/raw/celltype_markers.csv"  # User must supply
+crossdisorder:
+  category_test_n_perm: 10000             # Permutations for H3 test
+robustness:
+  leave_one_donor_out: true
+  subsample_repeats: 100                  # For gene-set size effect
+
+# --- Phase 6: Visualization ---
+viz:
+  dpi: 300
+  formats: ["png", "svg"]
+  palette: "cividis"                      # Colour-blind safe
+  diverging_palette: "RdBu_r"
+  figure_dir: "reports/figures"
+  table_dir: "reports/tables"
+
+# --- Phase 7: App ---
+app:
+  precomputed_dir: "data/processed"
+  user_genelist_n_perm: 1000              # Reduced perms for live analysis

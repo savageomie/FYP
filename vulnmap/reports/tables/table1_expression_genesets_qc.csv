@@ -1,0 +1,6 @@
+Pipeline Stage,Specification,Benchmark
+Microarray Samples Normalization,Scaled Robust Sigmoid (SRS),Arnatkevičiūtė et al. 2019
+Differential Stability Filtering,DS >= 0.10 threshold,Hawrylycz et al. 2015
+Parcellation Anatomy,Desikan-Killiany (82 cortical + subcortical parcels),ENIGMA Protocol
+GWAS Significant Threshold,p < 5e-8 (Genome-wide),GWAS Catalog
+GWAS Suggestive Threshold,p < 1e-5 (Suggestive),GWAS Catalog

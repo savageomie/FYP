@@ -1,0 +1,118 @@
+# =============================================================================
+# VulnMap: Disorder Definitions
+# =============================================================================
+# Each disorder has:
+#   efo_id: EFO identifier for GWAS Catalog query (VERIFY each one)
+#   gwas_trait: The trait string used in GWAS Catalog (for cross-referencing)
+#   category: "psychiatric", "neurodegenerative", or "other"
+#   special_case: optional flag for disorders needing special handling
+#   notes: scientific caveats
+#
+# IMPORTANT: Every EFO ID below must be verified by the user at:
+#   https://www.ebi.ac.uk/gwas/efotraits/
+# Some IDs may be parent traits that include subtypes, or may have been
+# retired/merged. Check that each returns the expected associations.
+
+disorders:
+  schizophrenia:
+    efo_id: "EFO_0000692"           # VERIFY
+    gwas_trait: "schizophrenia"
+    category: "psychiatric"
+    notes: "Large GWAS (PGC3, ~300 loci). Well-powered."
+
+  bipolar_disorder:
+    efo_id: "EFO_0000289"           # VERIFY
+    gwas_trait: "bipolar disorder"
+    category: "psychiatric"
+    notes: "PGC bipolar GWAS. Substantial genetic overlap with schizophrenia."
+
+  major_depressive_disorder:
+    efo_id: "EFO_0003761"           # VERIFY
+    gwas_trait: "major depressive disorder"
+    category: "psychiatric"
+    notes: "Heterogeneous phenotype. Many loci but individually small effects."
+
+  adhd:
+    efo_id: "EFO_0003888"           # VERIFY
+    gwas_trait: "attention deficit-hyperactivity disorder"
+    category: "psychiatric"
+    notes: "Fewer genome-wide significant loci than SCZ/BIP. May be underpowered."
+
+  autism:
+    efo_id: "EFO_0003756"           # VERIFY
+    gwas_trait: "autism spectrum disorder"
+    category: "psychiatric"
+    notes: "Common-variant GWAS plus rare-variant studies. GWAS hits may be few."
+
+  ocd:
+    efo_id: "EFO_0004247"           # VERIFY
+    gwas_trait: "obsessive-compulsive disorder"
+    category: "psychiatric"
+    notes: "Relatively small GWAS to date. May fall below min_genes threshold."
+
+  epilepsy:
+    efo_id: "EFO_0000474"           # VERIFY
+    gwas_trait: "epilepsy"
+    category: "other"
+    notes: "Heterogeneous: focal vs generalized. Consider sub-phenotypes."
+
+  parkinsons_disease:
+    efo_id: "EFO_0002508"           # VERIFY
+    gwas_trait: "Parkinson disease"
+    category: "neurodegenerative"
+    notes: >
+      Well-powered GWAS (Nalls et al. 2019). Substantia nigra is the
+      key vulnerable region but may not be a separate label in Desikan-Killiany.
+      ENIGMA PD cortical thickness map may not be built-in; user must supply
+      an atrophy CSV. # VERIFY enigmatoolbox coverage.
+
+  alzheimers_disease:
+    efo_id: "EFO_0000249"           # VERIFY
+    gwas_trait: "Alzheimer disease"
+    category: "neurodegenerative"
+    notes: >
+      Large GWAS (Bellenguez et al. 2022). Entorhinal cortex is the key
+      region. ENIGMA AD map may not be built-in; user must supply atrophy CSV.
+
+  als:
+    efo_id: "EFO_0000253"           # VERIFY
+    gwas_trait: "amyotrophic lateral sclerosis"
+    category: "neurodegenerative"
+    notes: "Fewer common-variant hits. C9orf72 expansion is a major risk factor (not GWAS-captured)."
+
+  frontotemporal_dementia:
+    efo_id: "EFO_0000621"           # VERIFY
+    gwas_trait: "frontotemporal dementia"
+    category: "neurodegenerative"
+    notes: "Small GWAS. Strong genetic overlap with ALS. May be underpowered."
+
+  multiple_sclerosis:
+    efo_id: "EFO_0003885"           # VERIFY
+    gwas_trait: "multiple sclerosis"
+    category: "other"
+    notes: >
+      Strong immune/MHC component. Regional vulnerability is white-matter
+      lesion distribution, not grey-matter atrophy. Interpret with caution.
+
+  tourette_syndrome:
+    efo_id: "EFO_0001362"           # VERIFY
+    gwas_trait: "Tourette syndrome"
+    category: "psychiatric"
+    notes: "Relatively small GWAS. May be underpowered."
+
+  migraine:
+    efo_id: "EFO_0003821"           # VERIFY
+    gwas_trait: "migraine disorder"
+    category: "other"
+    notes: "Many loci but vascular component. Brain vulnerability pattern differs from neurodegenerative."
+
+  huntingtons_disease:
+    efo_id: "EFO_0000668"           # VERIFY - may need sub-trait for age-at-onset
+    gwas_trait: "Huntington disease"
+    category: "neurodegenerative"
+    special_case: "monogenic"
+    notes: >
+      SPECIAL CASE: HD is monogenic (HTT CAG expansion). GWAS finds
+      age-at-onset MODIFIERS (GeM-HD Consortium), not causal genes.
+      EFO ID may need to be the age-at-onset sub-trait. Gene set represents
+      modifier genes, not disease-causing genes. Interpret accordingly.
